@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Following Cleaner",
+  "version": "0.1.0",
+  "description": "Lists users you follow and allows selective unfollowing. Use responsibly.",
+  "permissions": [
+    "activeTab", // Allows interaction with the currently active tab
+    "scripting", // Allows injecting scripts into pages
+    "storage" // To potentially save settings in the future (not used in this basic version)
+  ],
+  "host_permissions": [
+    "*://*.instagram.com/*" // Necessary to inject scripts into Instagram
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png", // You'll need to create these icon files
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+   "content_scripts": [
+    {
+      "matches": ["*://*.instagram.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

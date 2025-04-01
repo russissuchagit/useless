@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Following Cleaner</title>
+    <style>
+        body { font-family: sans-serif; width: 350px; padding: 10px; }
+        #userList { max-height: 300px; overflow-y: auto; border: 1px solid #ccc; margin-bottom: 10px; padding: 5px; }
+        .user-item { display: flex; align-items: center; padding: 4px 0; border-bottom: 1px solid #eee; }
+        .user-item input { margin-right: 8px; }
+        .user-item label { flex-grow: 1; }
+        button { padding: 8px 15px; margin-top: 5px; cursor: pointer; }
+        #status { margin-top: 10px; font-style: italic; color: #555; }
+        #selectAll { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <h3>Instagram Following Cleaner</h3>
+    <p><strong>Instructions:</strong>
+        <ol>
+            <li>Go to your Instagram profile page.</li>
+            <li>Click on your "Following" count to open the list.</li>
+            <li>Scroll down the list fully if needed.</li>
+            <li>Click "Scan Following List" below.</li>
+        </ol>
+    </p>
+
+    <button id="scanButton">Scan Following List</button>
+    <hr>
+
+    <div id="controls" style="display: none;">
+        <input type="checkbox" id="selectAll"> <label for="selectAll">Select/Deselect All</label>
+        <div id="userList">
+            <!-- User list will be populated here -->
+        </div>
+        <button id="unfollowButton">Unfollow Selected</button>
+    </div>
+
+    <div id="status">Ready. Open your 'Following' list on Instagram first.</div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
